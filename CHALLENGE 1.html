@@ -1,37 +1,39 @@
 <!DOCTYPE HTML>
-<head>
-    <title>Incrementing a counter using a button!</title>
-</head>
-<body>
+<html>
+    <head>
+        <title>Incrementing a counter using a button!</title>
+    </head>
     <body>
-        <h1>Click the button!</h1>
-        <p>Counter: <span id="counter">0</span></p>
-        <button onclick="increment()">Click me!</button>
-        
-        
-        <script>
-            // Javascript code
-            // Initialize counter variable
-            var count = 0;
-
-            if (localStorage.getItem("count")) {
-			// Retrieve counter value from local storage
-			count = parseInt(localStorage.getItem("count"));
-		    }
-
-            document.getElementById("counter").innerHTML = count;
+        <body>
+            <h1>Click the button!</h1>
+            <p>Counter: <span id="counter">0</span></p>
+            <button onclick="increment()">Click me!</button>
+            
+            
+            <script>
+                // Javascript code
+                // Initialize counter variable
+                var count = 0;
     
-            // Function to handle button click event
-            function increment() {
-                // Increment counter variable
-                count++;
-            // Update counter display
+                if (localStorage.getItem("count")) {
+                // Retrieve counter value from local storage
+                count = parseInt(localStorage.getItem("count"));
+                }
+    
                 document.getElementById("counter").innerHTML = count;
-
-            // Store counter value in local storage in order to prevent it from losing its value when refreshed!
-            localStorage.setItem("count", count.toString());
-            }
-
-        </script>
+        
+                // Function to handle button click event
+                function increment() {
+                    // Increment counter variable
+                    count++;
+                // Update counter display
+                    document.getElementById("counter").innerHTML = count;
+    
+                // Store counter value in local storage in order to prevent it from losing its value when refreshed!
+                localStorage.setItem("count", count.toString());
+                }
+    
+            </script>
+        </body>
     </body>
-</body>
+</html>
